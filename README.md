@@ -1,2 +1,2 @@
 # RockPaperScissors
-A  Rock , Paper , Scissors project.
+A  Rock Paper Scissors project.
