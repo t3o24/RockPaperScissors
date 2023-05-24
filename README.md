@@ -35,6 +35,5 @@ Input and output of the game:
  c.Scissors or s
  
  Live demo:
- https://replit.com/@t3o24/RockPaperScissors-Game-by-Teo#Main.cs
-
+[ttps://replit.com/@t3o24/RockPaperScissors-Game-by-Teo)](https://replit.com/@t3o24/RockPaperScissors-Game-by-Teo)
 
