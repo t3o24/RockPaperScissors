@@ -8,6 +8,15 @@ namespace RockPaperScissors
         static void Main(string[] args)
         {
 
+            using System;
+
+
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
             string Rock = "Rock";
             string Paper = "Paper";
             string Scissors = "Scissors";
@@ -33,11 +42,14 @@ namespace RockPaperScissors
 
             else
             {
-                Console.WriteLine("Invalid Input. Try Again...");  
+                Console.ForegroundColor = ConsoleColor.DarkRed; 
+                Console.WriteLine("Invalid Input. Try Again...");
+                Console.ResetColor();
+                return;
             }
-            
 
-          
+
+
             Random random = new Random();
             int computerRandomNumber = random.Next(1, 4);
 
@@ -54,23 +66,33 @@ namespace RockPaperScissors
                     break;
             }
 
-
+          
             Console.WriteLine($"The computer chose {computerMove}.");
 
-            if ((playerMove == Rock && computerMove== Scissors || playerMove == Paper && computerMove == Rock || playerMove == Scissors && computerMove == Paper))
+            if ((playerMove == Rock && computerMove == Scissors || playerMove == Paper && computerMove == Rock || playerMove == Scissors && computerMove == Paper))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("You win.");
             }
 
             else if ((computerMove == Rock && playerMove == Scissors || computerMove == Paper && playerMove == Rock || computerMove == Scissors & playerMove == Paper))
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You lose.");
             }
 
             else
             {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("The game is a draw.");
+
             }
+            Console.ResetColor();
+        }
+ 
+    }
+}
+
 
 
         }
