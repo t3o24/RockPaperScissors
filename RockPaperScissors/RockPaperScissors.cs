@@ -17,84 +17,108 @@ namespace ConsoleApp5
     {
         private static void Main(string[] args)
         {
+            using System;
+
+
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
             string Rock = "Rock";
             string Paper = "Paper";
             string Scissors = "Scissors";
             string computerMove = "";
 
-            Console.WriteLine("Choose {r}ock, {p}aper or {s}cissors");
-            string playerMove = Console.ReadLine();
+            bool continuePlaying = true;
 
-            if (playerMove == "r" || playerMove == "rock")
+            while (continuePlaying)
             {
-                playerMove = Rock;
-            }
+                Console.WriteLine("Choose {r}ock, {p}aper or {s}cissors");
+                string playerMove = Console.ReadLine();
 
-            else if (playerMove == "p" || playerMove == "paper")
-            {
-                playerMove = Paper;
-            }
+                if (playerMove == "r" || playerMove == "rock")
+                {
+                    playerMove = Rock;
+                }
 
-            else if ((playerMove == "s" || playerMove == "scissors"))
-            {
-                playerMove = Scissors;
-            }
+                else if (playerMove == "p" || playerMove == "paper")
+                {
+                    playerMove = Paper;
+                }
 
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.DarkRed; 
-                Console.WriteLine("Invalid Input. Try Again...");
+                else if ((playerMove == "s" || playerMove == "scissors"))
+                {
+                    playerMove = Scissors;
+                }
+
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Invalid Input. Try Again...");
+                    Console.ResetColor();
+                    return;
+                }
+
+                Random random = new Random();
+                int computerRandomNumber = random.Next(1, 4);
+
+                switch (computerRandomNumber)
+                {
+                    case 1:
+                        computerMove = Rock;
+                        break;
+                    case 2:
+                        computerMove = Paper;
+                        break;
+                    case 3:
+                        computerMove = Scissors;
+                        break;
+                }
+
+
+                Console.WriteLine($"The computer chose {computerMove}.");
+
+                if ((playerMove == Rock && computerMove == Scissors || playerMove == Paper && computerMove == Rock || playerMove == Scissors && computerMove == Paper))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("You win.");
+                }
+
+                else if ((computerMove == Rock && playerMove == Scissors || computerMove == Paper && playerMove == Rock || computerMove == Scissors & playerMove == Paper))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("You lose.");
+                    
+                }
+                
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("The game is a draw.");
+                }
                 Console.ResetColor();
-                return;
-            }
+                
 
+                Console.WriteLine("Do you want to continue playing? (Y/N)");
+                string choice = Console.ReadLine().ToUpper();
 
-
-            Random random = new Random();
-            int computerRandomNumber = random.Next(1, 4);
-
-            switch (computerRandomNumber)
-            {
-                case 1:
-                    computerMove = Rock;
-                    break;
-                case 2:
-                    computerMove = Paper;
-                    break;
-                case 3:
-                    computerMove = Scissors;
-                    break;
-            }
-
-          
-            Console.WriteLine($"The computer chose {computerMove}.");
-
-            if ((playerMove == Rock && computerMove == Scissors || playerMove == Paper && computerMove == Rock || playerMove == Scissors && computerMove == Paper))
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("You win.");
-            }
-
-            else if ((computerMove == Rock && playerMove == Scissors || computerMove == Paper && playerMove == Rock || computerMove == Scissors & playerMove == Paper))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You lose.");
-            }
-
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine("The game is a draw.");
+                if (choice != "Y")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("Thank you for playing!");
+                    continuePlaying = false;
+                }
+                else
+                {
+                    Console.Clear();
+                }
+                Console.ResetColor();
 
             }
-            Console.ResetColor();
         }
+    }
+}
+
  
-    }
-}
-
-
-
-        }
-    }
-}
