@@ -28,7 +28,7 @@ Input and output of the game:
  
  c.Scissors or s
  
- Source code:
- [Source Code](RockPaperScissors.cs)
+ Live demo:
+ https://replit.com/@t3o24/RockPaperScissors-Game-by-Teo#Main.cs
 
 
