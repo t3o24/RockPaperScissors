@@ -14,11 +14,17 @@ a. User Input: The program accepts user inputs for their choice of rock, paper, 
 b. Random Computer Choice.
 
 c. Win Determination: The program compares the user's choice with the computer's choice to determine the winner.
+
+d. Multiple Rounds: The game allows multiple rounds to be played until the players decide to quit.
+
 ![image](https://github.com/t3o24/RockPaperScissors/assets/132571247/787a4c24-cc35-429e-8301-d46cd6fba519)
 
 ![image](https://github.com/t3o24/RockPaperScissors/assets/132571247/222a9ad2-3609-4e75-9292-07e032c7af4a)
 
 ![image](https://github.com/t3o24/RockPaperScissors/assets/132571247/f150f951-ce12-4c3e-9980-3687a3c977be)
+
+![image](https://github.com/t3o24/RockPaperScissors/assets/132571247/99684ff6-8723-4b19-a383-8ba6387c6dfc)
+
 
 Input and output of the game:
  
