@@ -26,7 +26,7 @@ d. Multiple Rounds: The game allows multiple rounds to be played until the playe
 ![image](https://github.com/t3o24/RockPaperScissors/assets/132571247/99684ff6-8723-4b19-a383-8ba6387c6dfc)
 
 
-Input and output of the game:
+Input of the game:
  
  a. Rock or r
  
