@@ -1,23 +1,4 @@
-﻿using System;
-
-
-namespace RockPaperScissors
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-
-            using System;
-
-
-namespace ConsoleApp5
-{
-    internal class Program
-    {
-        private static void Main(string[] args)
-        {
-            using System;
+using System;
 
 
 namespace ConsoleApp5
@@ -30,6 +11,8 @@ namespace ConsoleApp5
             string Paper = "Paper";
             string Scissors = "Scissors";
             string computerMove = "";
+            int playerScore = 0;
+            int computerScore = 0;
 
             bool continuePlaying = true;
 
@@ -77,20 +60,20 @@ namespace ConsoleApp5
                         break;
                 }
 
-
                 Console.WriteLine($"The computer chose {computerMove}.");
 
                 if ((playerMove == Rock && computerMove == Scissors || playerMove == Paper && computerMove == Rock || playerMove == Scissors && computerMove == Paper))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("You win.");
+                    playerScore++;
                 }
 
                 else if ((computerMove == Rock && playerMove == Scissors || computerMove == Paper && playerMove == Rock || computerMove == Scissors & playerMove == Paper))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("You lose.");
-                    
+                    computerScore++;
                 }
                 
                 else
@@ -99,8 +82,9 @@ namespace ConsoleApp5
                     Console.WriteLine("The game is a draw.");
                 }
                 Console.ResetColor();
-                
 
+                Console.WriteLine($"Player Score: {playerScore}  Computer Score: {computerScore}");
+                
                 Console.WriteLine("Do you want to continue playing? (Y/N)");
                 string choice = Console.ReadLine().ToUpper();
 
@@ -120,5 +104,3 @@ namespace ConsoleApp5
         }
     }
 }
-
- 
